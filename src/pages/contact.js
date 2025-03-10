@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import { ref, push, serverTimestamp } from 'firebase/database'
-import { database } from '@/utils/firebase'
 import Button from '@/components/ui/Button'
 
 export default function Contact() {
@@ -11,26 +9,20 @@ export default function Contact() {
   });
   const [status, setStatus] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (event) => {
+    event.preventDefault();
     
     try {
-      // Add timestamp to the message
-      const messageData = {
-        ...formData,
-        timestamp: serverTimestamp(),
-        status: 'unread'
-      };
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
 
-      // Push to Firebase
-      const messagesRef = ref(database, 'messages');
-      await push(messagesRef, messageData);
+      if (!response.ok) throw new Error('Failed to send message');
 
-      // Clear form and show success
       setFormData({ name: '', email: '', message: '' });
       setStatus('Message sent successfully! We will get back to you soon.');
-      
-      // Clear status after 5 seconds
       setTimeout(() => setStatus(''), 5000);
 
     } catch (error) {
@@ -70,6 +62,13 @@ export default function Contact() {
               />
             </div>
             
+            <div>
+              <label className="block text-neon-blue mb-2">Email</label>
+              <input 
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
             <div>
               <label className="block text-neon-blue mb-2">Email</label>
               <input 
