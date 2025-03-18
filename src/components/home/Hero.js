@@ -1,4 +1,5 @@
 import Button from '../ui/Button'
+import SongPlayer from '../home/SongPlayer'
 
 export default function Hero() {
   return (
@@ -23,6 +24,8 @@ export default function Hero() {
             <Button variant="cyber">Enter Laboratory</Button>
             <Button variant="cyber-outline">View Research</Button>
           </div>
+
+          <SongPlayer />
 
           <div className="absolute bottom-10 left-0 right-0 flex justify-center animate-bounce">
             <svg className="w-6 h-6 text-neon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">

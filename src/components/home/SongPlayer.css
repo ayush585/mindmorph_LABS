@@ -1,0 +1,57 @@
+.song-player {
+  background-color: #f5f5dc; /* Light cream background */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.header-bar {
+  background-color: #333; /* Dark gray header */
+  padding: 10px;
+  border-radius: 10px 10px 0 0; /* Rounded top corners */
+}
+
+.header-text {
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.audio-element {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-button {
+  background-color: #ff4500; /* Red-orange color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+
+.progress-indicator {
+  height: 100%;
+  background-color: white; /* Thin white bar */
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

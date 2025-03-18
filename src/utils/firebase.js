@@ -1,16 +1,21 @@
-import { initializeApp } from 'firebase/app';
-import { getDatabase } from 'firebase/database';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  // Replace with your Firebase config
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
+  apiKey: "AIzaSyBxM_F_uAf59FbSjynejSb_W5XYCPXJtTw",
+  authDomain: "mindmorphlabs.firebaseapp.com",
+  projectId: "mindmorphlabs",
+  storageBucket: "mindmorphlabs.firebasestorage.app",
+  messagingSenderId: "442459850348",
+  appId: "1:442459850348:web:663ae5c6bf10995084fa49",
+  measurementId: "G-3J3LHNYT62"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const database = getDatabase(app);
+const analytics = getAnalytics(app);
