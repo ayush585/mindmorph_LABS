@@ -53,7 +53,6 @@ const SongPlayer = () => {
       </div>
       <div className="bg-white p-5 rounded-lg shadow-sm">
         {error && <div className="text-red-500 text-center mb-2 text-sm">{error}</div>}
-        }
         <audio 
           ref={audioRef} 
           onTimeUpdate={updateProgress}
