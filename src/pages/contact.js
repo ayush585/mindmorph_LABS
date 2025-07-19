@@ -69,13 +69,6 @@ const handleSubmit = async (event) => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-            <div>
-              <label className="block text-neon-blue mb-2">Email</label>
-              <input 
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
                 className="w-full p-3 bg-cyber-dark border border-neon-blue/30 rounded-lg 
                          text-white focus:border-neon-blue/100 transition-all"
                 required

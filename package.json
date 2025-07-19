@@ -12,10 +12,12 @@
     "@tailwindcss/postcss": "^4.1.11",
     "autoprefixer": "latest",
     "date-fns": "latest",
+    "firebase": "latest",
     "next": "latest",
     "postcss": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-router-dom": "latest",
     "tailwindcss": "latest",
     "undici": "latest"
   },

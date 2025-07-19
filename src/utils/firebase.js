@@ -1,14 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBxM_F_uAf59FbSjynejSb_W5XYCPXJtTw",
   authDomain: "mindmorphlabs.firebaseapp.com",
+  databaseURL: "https://mindmorphlabs-default-rtdb.firebaseio.com/",
   projectId: "mindmorphlabs",
   storageBucket: "mindmorphlabs.firebasestorage.app",
   messagingSenderId: "442459850348",
@@ -18,4 +17,14 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+// Initialize Realtime Database and get a reference to the service
+export const database = getDatabase(app);
+
+// Initialize Analytics (only in browser environment)
+let analytics;
+if (typeof window !== 'undefined') {
+  analytics = getAnalytics(app);
+}
+
+export { analytics };
